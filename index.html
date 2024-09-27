@@ -1,12 +1,95 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Väliaikainen tyhjiö</title>
+    <meta name="robots" content="noindex">
+    <meta name="googlebot" content="noindex">
+    <title>Parempien pelihetkien perässä - PeliPalvelu</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/404404b351.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <p>Tervetuloa! Sivustoa rakennetaan vielä.</p>
-    <p>Ja ei vieläkään ole suuria muutoksia tehty...</p>
+
+    <header class="home">
+        <div class="logoBox">
+            <a href="index.html">
+                <img src="kuvat/logo.jpg" alt="PeliPalvelu logo" id="logo">
+            </a>
+        </div>
+        <nav>
+            <div class="navDiv">
+                <a href="index.html" id="current" class="button">Etusivu</a>
+                <a href="palvelut.html" class="button">Palvelut</a>
+                <a href="yhteystiedot.html" class="button">Yhteystiedot</a>
+            </div>
+        </nav>
+    </header>
+
+    <section class="banner">
+        <div class="bannerContainer">
+            <div class="slogan">
+                <h1>
+                    Parempien<br>
+                    pelihetkien<br>
+                    perässä
+                </h1>
+            </div>
+
+            <div>
+                <a href="palvelut.html" class="button" id="cta">Tutustu palveluun</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="home" id="grid-container1">
+        <div class="imageItem" id="darkBack">
+            <!-- <img src="kuvat/placeholder.jpg" alt="kuva 1"> -->
+        </div>
+
+        <div class="textItem">
+            <h2>Pelitaidot hukassa?</h2>
+                <p>
+                    Ei hätää, PeliPalvelu auttaa! Valitse peli, jota haluat treenata ja ota yhteyttä, niin katsotaan yhdessä miten voidaan palauttaa pelitaito entiselleen
+                </p>
+        </div>
+
+        <div class="buttonItem">
+            <a href="yhteystiedot.html" class="button" id="yhteystietoNappi">Ota yhteyttä</a>
+        </div>
+    </section>
+
+    <section class="home" id="grid-container2">
+        <div class="textItem">
+            <h2>Kiinostavaa, eikös?</h2>
+                <p>
+                    Jos asia ei vielä tullut selväksi, niin ehkä tämä sivu voi avustaa ymmärrystäsi. Toki jos sekään ei riitä niin selailet sitten vain yhteydenottonäppäimen luo
+                </p>
+        </div>
+
+        <div class="buttonItem">
+            <a href="yhteystiedot.html" class="button" id="palveluNappi">Tutustu palveluun</a>
+        </div>
+
+        <div class="imageItem" id="kadotustemppu">
+            <!-- <img src="kuvat/placeholder.jpg" alt="kuva 2" class="kuva2"> -->
+        </div>
+    </section>
+
+    <footer class="home">
+        <div class="footerCopy">
+            <p>&copy; PeliPalvelu Fy - 2024</p>
+        </div>
+        <div class="footerNav">
+            <a href="etusivu.html">Etusivu</a>
+            <a href="palvelut.html">Palvelut</a>
+            <a href="yhteystiedot.html">Yhteystiedot</a>
+        </div>
+        <div class="footerLogos">
+            <a href="https://youtube.com"><i class="fab fa-youtube"></i></a>
+            <a href="https://instagram.com"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
 </body>
 </html>
