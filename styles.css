@@ -28,7 +28,8 @@ body{
 h1, h2, h3, h4, h5, h6, .logo{
     font-family: headers, serif;
     text-transform: uppercase;
-    margin: 0;
+    margin: 0px;
+    padding: 0px;
     color: #bf6e12;
 }
 p, a, img{
@@ -37,6 +38,7 @@ p, a, img{
     color: #bf6e12;
 }
 .textItem p{
+    position: relative;
     margin: 20px 10px 10px;
 }
 img{
@@ -48,7 +50,6 @@ img{
     justify-content: center;
     flex-direction: column;
     max-width: 100%;
-    background-color: #ffd19375;
 }
 .bannerContainer{
     max-width: max-content;
@@ -57,9 +58,13 @@ img{
 }
 .slogan{
     text-align: center;
+    justify-content: center;
     width: max-content;
     height: max-content;
     position: relative;
+    background-color: #ffffffee;
+    padding: 10px 10px 10px 15px;
+    border: 5px solid #bf6e12;
 }
 
 /* Nappien asetukset */
@@ -67,19 +72,20 @@ img{
     display: inline-block;
     color: #ffffff;
     border: 5px solid #bf6e12;
-    /*padding: 10px 20px;*/
+    /*padding: 4% 4%;*/
     background-color: #e09b12;
     box-shadow: 5px 5px #bf6e1275;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 600;
     margin: 10px;
+    align-self: center;
 }
 #cta{
     margin-top: 20px;
 }
 .button#current{
-    background-color: #ebc28550;
+    background-color: #fff2df;
 }
 nav .button{
     background-color: #ffffff;
@@ -117,6 +123,9 @@ nav .button, .button:hover, #yhteystietoNappi:hover{
     justify-content: space-evenly;
 }.footerLogos{grid-area: f3; display:flex; gap: 20px;}
 
+.banner{
+    background-image: url(kuvat/controllerbackground-dark-090.jpg);
+}
 section.home{
     display: grid;
     border: 5px solid #bf6e12;
@@ -144,7 +153,7 @@ footer{
     max-width: 100%;
     display: grid;
     text-align: center;
-    background-color: #bf6e1220;
+    background-color: #fff2df;
     padding: 5% 20%;
 }
 
@@ -153,10 +162,11 @@ footer{
 @media screen and (max-width: 900px){
     /* Fonttikoot mobiiliasetelmalle */
     h1{font-size: 48px;}
-    h2{font-size: 28px;}
+    h2{font-size: 28px; max-width: 100%;}
     h3{font-size: 24px;}
-    p{font-size: 18px;}
-    .button{font-size: 24px; padding: 5px 10px; max-width: 150px;}
+    p{font-size: 18px; max-width: 100%;}
+    .button{font-size: 24px; padding: 5px 15px 5px 10px; max-width: 150px;}
+    nav .button{font-size: 20px; padding: 5px;}
     .cta{font-size: 28px !important;}
     i{font-size: 24px;}
     body{
@@ -166,7 +176,7 @@ footer{
         display: flex;
         flex-direction: column;
         align-items: center;
-        padding: 10px 5% 0px;
+        padding: 10px 2% 0px;
         gap: 10px;
     }
     .banner{
@@ -178,7 +188,10 @@ footer{
     }
     section.home{
         margin: 20px auto;
+        width: 450px;
         max-width: 80%;
+        justify-content: center;
+        text-align: center;
     }
     #grid-container1, #grid-container2{
         grid-template-areas: 
@@ -191,13 +204,15 @@ footer{
     }
     .textItem{
         padding: 10px;
+        margin: auto;
+        width: 85%;
     }
     footer{
         grid-template-areas: 
             'f2'
             'f3'
             'f1';
-        max-height: 150px;
+        max-height: max-content;
         padding: 30px 50px;
         gap: 20px;
         justify-items: center;
@@ -206,7 +221,7 @@ footer{
         gap: 20px;
     }
     .footerNav{
-        width: 50%;
+        width: 100%;
     }
 }
 
@@ -217,7 +232,8 @@ footer{
     h2{font-size: 32px;}
     h3{font-size: 28px;}
     p{font-size: 18px;}
-    .button{font-size: 24px; padding: 10px 20px;}
+    .button{font-size: 24px; padding: 10px 25px 10px 20px;}
+    nav .button{padding: 10px 20px;}
     .cta{font-size: 28px !important;}
     header{
         display: flex;
@@ -231,11 +247,10 @@ footer{
         height: 600px;
         padding: 1px 20%;
         justify-items: left;
-
+        background-image: url(kuvat/controllerbackground-dark-180.jpg);
     }
     section.home{
         margin: 20px auto;
-        width: 60%;
         max-width: 700px;
         padding: 50px;
     }
