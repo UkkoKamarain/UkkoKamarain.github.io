@@ -15,6 +15,10 @@ body{
     margin: 0;
     align-content: center;
 }
+header{
+    display: flex;
+    background-color: #ffffff;
+}
 
 /* Fonttien asettamiset */
 @font-face {
@@ -37,7 +41,7 @@ p, a, img{
     margin: 0;
     color: #bf6e12;
 }
-.textItem p{
+.textItem p, .textitem2 p{
     position: relative;
     margin: 20px 10px 10px;
 }
@@ -74,7 +78,7 @@ img{
     border: 5px solid #bf6e12;
     /*padding: 4% 4%;*/
     background-color: #e09b12;
-    box-shadow: 5px 5px #bf6e1275;
+    box-shadow: 5px 10px #bf6e12b8;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 600;
@@ -100,7 +104,7 @@ nav .button{
     background-color: #ffd193;
     color: #bf6e12;
     border-color: #ffffff;
-    box-shadow: 5px 5px #ffffff75;
+    box-shadow: 5px 10px #ffffffb8;
 }
 .button:hover, #current:hover, #yhteystietoNappi:hover{
     background-color: #03c1fd;
@@ -109,13 +113,17 @@ nav .button, .button:hover, #yhteystietoNappi:hover{
     box-shadow: none;
 }
 
-/* Grid-elementit */
-.textItem{grid-area: g1; 
+.textItem, .textItem2{
     display: inline-block; 
     border: 5px solid #bf6e12; 
     background-color: #ffffff;
-}.buttonItem{grid-area: g2;}
+}
+
+/* Grid-elementit */
+.textItem{grid-area: g1;}
+.buttonItem{grid-area: g2;}
 .imageItem{grid-area: g3;}
+.textItem2{grid-area: g4;}
 .footerCopy{grid-area: f1;}
 .footerNav{grid-area: f2; 
     display: flex; 
@@ -128,16 +136,18 @@ nav .button, .button:hover, #yhteystietoNappi:hover{
 }
 section.home{
     display: grid;
-    border: 5px solid #bf6e12;
     padding: 5%;
     text-align: center;
     gap: 10px;
+    border: 5px solid #bf6e12;
+    background-color: #ffffff;
 }
 .imageItem{
     width: 300px;
     height: 300px;
     background-color: #bf6e12;
     margin: auto;
+    border: 5px solid #bf6e12;
 }
 #darkBack{
     background-color: #ffd193;
@@ -146,7 +156,7 @@ section.home{
     background-color: #bf6e12;
     border-color: #ffd193;
 }
-#grid-container1 .textItem, .kuva1{
+#grid-container1 .textItem, .kuva1, #grid-container1 .textItem2{
     border-color: #ffd193;
 }
 footer{
@@ -155,11 +165,15 @@ footer{
     text-align: center;
     background-color: #fff2df;
     padding: 5% 20%;
+    margin-top: auto;
 }
 
 
 /* MOBIILIKOKO */
 @media screen and (max-width: 900px){
+    .altbg{
+        background-image: url(kuvat/controllerbackground-dark-090.jpg);
+    }
     /* Fonttikoot mobiiliasetelmalle */
     h1{font-size: 48px;}
     h2{font-size: 28px; max-width: 100%;}
@@ -173,7 +187,6 @@ footer{
         text-align: center;
     }
     header{
-        display: flex;
         flex-direction: column;
         align-items: center;
         padding: 10px 2% 0px;
@@ -184,7 +197,7 @@ footer{
     align-items: center;
     }
     .slogan{
-        margin: 0 auto;
+        margin: 30px auto 0px;
     }
     section.home{
         margin: 20px auto;
@@ -193,16 +206,24 @@ footer{
         justify-content: center;
         text-align: center;
     }
-    #grid-container1, #grid-container2{
+    #grid-container1{
+        grid-template-areas: 
+            'g4'
+            'g3'
+            'g1'
+            'g2';
+    }
+    #grid-container2{
         grid-template-areas: 
             'g1'
             'g2'
-            'g3';
+            'g3'
+            'g4';
     }
     #kadotustemppu{
         display: none;
     }
-    .textItem{
+    .textItem, .textItem2{
         padding: 10px;
         margin: auto;
         width: 85%;
@@ -217,6 +238,14 @@ footer{
         gap: 20px;
         justify-items: center;
     }
+    .imageItem{
+        width: 250px;
+    }
+    iframe{
+        width: 250px;
+        height: 300px;
+        border: 0px;
+    }
     div{
         gap: 20px;
     }
@@ -227,6 +256,10 @@ footer{
 
 /* TYÖPÖYTÄKOKO */
 @media screen and (min-width: 901px) {
+        
+    .altbg{
+        background-image: url(kuvat/controllerbackground-dark-180.jpg);
+    }
     /* Fonttikoot työpöytäasetelmalle */
     h1{font-size: 72px;}
     h2{font-size: 32px;}
@@ -236,12 +269,14 @@ footer{
     nav .button{padding: 10px 20px;}
     .cta{font-size: 28px !important;}
     header{
-        display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         padding: 10px 5% 0px;
         gap: 10px;
+    }
+    .slogan{
+        margin: 30px auto 0px;
     }
     .banner{
         height: 600px;
@@ -256,6 +291,7 @@ footer{
     }
     #grid-container1{
         grid-template-areas: 
+            'g4 g4 g4'
             'g3 g1 g1'
             'g3 g1 g1'
             'g3 g2 g2';
@@ -264,10 +300,19 @@ footer{
         grid-template-areas: 
             'g1 g1 g3'
             'g1 g1 g3'
-            'g2 g2 g3';
+            'g2 g2 g3'
+            'g4 g4 g4';
     }
-    .textItem{
+    .textItem, .textItem2{
         padding: 20px;
+    }
+    .imageItem#map{
+        height: 475px;
+    }
+    iframe{
+        width: 300px;
+        height: 475px;
+        border: 0px;
     }
     footer{
         grid-template-areas: 
