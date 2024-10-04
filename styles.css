@@ -121,7 +121,7 @@ nav .button, .button:hover, #yhteystietoNappi:hover{
 
 /* Grid-elementit */
 .textItem{grid-area: g1;}
-.buttonItem{grid-area: g2;}
+.buttonItem{grid-area: g2; position: relative;}
 .imageItem{grid-area: g3;}
 .textItem2{grid-area: g4;}
 .footerCopy{grid-area: f1;}
@@ -156,7 +156,7 @@ section.home{
     background-color: #bf6e12;
     border-color: #ffd193;
 }
-#grid-container1 .textItem, .kuva1, #grid-container1 .textItem2{
+#grid-container1 .textItem, #grid-container1 .imageItem, #grid-container1 .textItem2{
     border-color: #ffd193;
 }
 footer{
@@ -206,7 +206,7 @@ footer{
         justify-content: center;
         text-align: center;
     }
-    #grid-container1{
+    #grid-container1, #grid-container3{
         grid-template-areas: 
             'g4'
             'g3'
@@ -238,14 +238,9 @@ footer{
         gap: 20px;
         justify-items: center;
     }
-    .imageItem{
+    /*.imageItem{
         width: 250px;
-    }
-    iframe{
-        width: 250px;
-        height: 300px;
-        border: 0px;
-    }
+    }*/
     div{
         gap: 20px;
     }
@@ -289,30 +284,23 @@ footer{
         max-width: 700px;
         padding: 50px;
     }
-    #grid-container1{
+    #grid-container1, #grid-container3{
         grid-template-areas: 
             'g4 g4 g4'
-            'g3 g1 g1'
             'g3 g1 g1'
             'g3 g2 g2';
     }
     #grid-container2{
         grid-template-areas: 
             'g1 g1 g3'
-            'g1 g1 g3'
             'g2 g2 g3'
             'g4 g4 g4';
     }
+    #grid-container3{
+        min-height: 475px;
+    }
     .textItem, .textItem2{
         padding: 20px;
-    }
-    .imageItem#map{
-        height: 475px;
-    }
-    iframe{
-        width: 300px;
-        height: 475px;
-        border: 0px;
     }
     footer{
         grid-template-areas: 
