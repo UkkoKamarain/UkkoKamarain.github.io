@@ -3,10 +3,9 @@ Värit
     Valkoinen: #FFFFFF
     Musta: #bf6e12
     P-Vaalea 1: #ffd193
-    P-Vaalea 2: #ebc285
+    P-Vaalea 2: #ebc285 - EI KÄYTETTY
     P-Normaali: #e09b12
-    P-Tumma: #e58a11
-    P-Tummin: #bf6e12
+    P-Tumma: #e58a11 - EI KÄYTETTY
     Korostus: #03c1fd
 */
 
@@ -32,43 +31,15 @@ header{
 h1, h2, h3, h4, h5, h6, .logo{
     font-family: headers, serif;
     text-transform: uppercase;
-    margin: 0px;
+    margin: 0px 0px 10px;
     padding: 0px;
     color: #bf6e12;
 }
 p, a, img{
     font-family: other, sans-serif;
-    margin: 0;
+    margin: 0px;
+    padding: 0px;
     color: #bf6e12;
-}
-.textItem p, .textitem2 p{
-    position: relative;
-    margin: 20px 10px 10px;
-}
-img{
-    position: relative;
-    border: 5px #bf6e12;
-}
-.banner{
-    display: flex;    
-    justify-content: center;
-    flex-direction: column;
-    max-width: 100%;
-}
-.bannerContainer{
-    max-width: max-content;
-    text-align: center;
-    padding: 10px;
-}
-.slogan{
-    text-align: center;
-    justify-content: center;
-    width: max-content;
-    height: max-content;
-    position: relative;
-    background-color: #ffffffee;
-    padding: 10px 10px 10px 15px;
-    border: 5px solid #bf6e12;
 }
 
 /* Nappien asetukset */
@@ -99,7 +70,6 @@ nav .button{
     font-weight: normal;
     margin: auto;
 }
-
 #yhteystietoNappi{
     background-color: #ffd193;
     color: #bf6e12;
@@ -113,34 +83,16 @@ nav .button, .button:hover, #yhteystietoNappi:hover{
     box-shadow: none;
 }
 
-.textItem, .textItem2{
-    display: inline-block; 
-    border: 5px solid #bf6e12; 
-    background-color: #ffffff;
+/* Kuva-asetukset */
+img{
+    position: relative;
+    border: 5px #bf6e12;
+    width: 300px;
+    height: 300px;
 }
-
-/* Grid-elementit */
-.textItem{grid-area: g1;}
-.buttonItem{grid-area: g2; position: relative;}
-.imageItem{grid-area: g3;}
-.textItem2{grid-area: g4;}
-.footerCopy{grid-area: f1;}
-.footerNav{grid-area: f2; 
-    display: flex; 
-    flex-direction: row; 
-    justify-content: space-evenly;
-}.footerLogos{grid-area: f3; display:flex; gap: 20px;}
-
-.banner{
-    background-image: url(kuvat/controllerbackground-dark-090.jpg);
-}
-section.home{
-    display: grid;
-    padding: 5%;
-    text-align: center;
-    gap: 10px;
-    border: 5px solid #bf6e12;
-    background-color: #ffffff;
+img#logo{
+    width: 270px;
+    height: 42px;
 }
 .imageItem{
     width: 300px;
@@ -149,8 +101,49 @@ section.home{
     margin: auto;
     border: 5px solid #bf6e12;
 }
-#darkBack{
+#darkBack{ /*Tämä on taustaväri, siinä tapauksessa, jos kuva ei lataudu.*/
     background-color: #ffd193;
+}
+
+/* Muut asetukset */
+.banner{
+    display: flex;    
+    justify-content: center;
+    flex-direction: column;
+    max-width: 100%;
+}
+.bannerContainer{
+    max-width: max-content;
+    text-align: center;
+    padding: 10px;
+}
+.slogan{
+    text-align: center;
+    justify-content: center;
+    width: max-content;
+    height: max-content;
+    position: relative;
+    background-color: #ffffffee;
+    padding: 10px 10px 10px 15px;
+    border: 5px solid #bf6e12;
+}
+section.home{
+    display: grid;
+    text-align: center;
+    gap: 10px;
+    border: 5px solid #bf6e12;
+    background-color: #ffffff;
+}
+.textItem, .textItem2{
+    display: inline-block; 
+    border: 5px solid #bf6e12; 
+    background-color: #ffffff;
+}
+.textItem p, .textitem2 p{
+    position: relative;
+}
+.banner{
+    background-image: url(kuvat/controllerbackground-dark-090.jpg);
 }
 #grid-container1{
     background-color: #bf6e12;
@@ -168,12 +161,27 @@ footer{
     margin-top: auto;
 }
 
+/* Grid-elementit */
+.textItem{grid-area: g1;}
+.buttonItem{grid-area: g2; position: relative;}
+.imageItem{grid-area: g3;}
+.textItem2{grid-area: g4;}
+.footerCopy{grid-area: f1;}
+.footerNav{grid-area: f2; 
+    display: flex; 
+    flex-direction: row; 
+    justify-content: space-evenly;
+    width: 100%;
+}.footerLogos{grid-area: f3; display:flex; gap: 20px;}
+
 
 /* MOBIILIKOKO */
 @media screen and (max-width: 900px){
+    /* Taustakuva alasivuille */
     .altbg{
         background-image: url(kuvat/controllerbackground-dark-090.jpg);
     }
+
     /* Fonttikoot mobiiliasetelmalle */
     h1{font-size: 48px;}
     h2{font-size: 28px; max-width: 100%;}
@@ -193,16 +201,17 @@ footer{
         gap: 10px;
     }
     .banner{
-    height: 400px;
-    align-items: center;
+        height: 400px;
+        align-items: center;
     }
     .slogan{
         margin: 30px auto 0px;
     }
     section.home{
         margin: 20px auto;
+        padding: 10px;
         width: 450px;
-        max-width: 80%;
+        max-width: 85%;
         justify-content: center;
         text-align: center;
     }
@@ -220,13 +229,12 @@ footer{
             'g3'
             'g4';
     }
-    #kadotustemppu{
+    #kadotustemppu{ /*Nimensä mukaisesti, tällä kadotetaan etusivun toinen kuva mobiilikoossa*/
         display: none;
     }
     .textItem, .textItem2{
         padding: 10px;
-        margin: auto;
-        width: 85%;
+        width: 280px;
     }
     footer{
         grid-template-areas: 
@@ -238,23 +246,16 @@ footer{
         gap: 20px;
         justify-items: center;
     }
-    /*.imageItem{
-        width: 250px;
-    }*/
-    div{
-        gap: 20px;
-    }
-    .footerNav{
-        width: 100%;
-    }
 }
 
 /* TYÖPÖYTÄKOKO */
 @media screen and (min-width: 901px) {
-        
+
+    /* Taustakuva alasivuille */
     .altbg{
         background-image: url(kuvat/controllerbackground-dark-180.jpg);
     }
+
     /* Fonttikoot työpöytäasetelmalle */
     h1{font-size: 72px;}
     h2{font-size: 32px;}
@@ -263,6 +264,7 @@ footer{
     .button{font-size: 24px; padding: 10px 25px 10px 20px;}
     nav .button{padding: 10px 20px;}
     .cta{font-size: 28px !important;}
+
     header{
         flex-direction: row;
         justify-content: space-between;
@@ -296,9 +298,6 @@ footer{
             'g2 g2 g3'
             'g4 g4 g4';
     }
-    #grid-container3{
-        min-height: 475px;
-    }
     .textItem, .textItem2{
         padding: 20px;
     }
@@ -308,9 +307,6 @@ footer{
         height: 40px;
         padding: 30px 50px;
         justify-items: center;
-    }
-    .footerNav{
-        width: 100%;
     }
 }
 
